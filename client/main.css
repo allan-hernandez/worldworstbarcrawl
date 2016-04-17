@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700);
+
+body {
+  color: black;
+}
+
+
+#textc, p, h5, .content, h2 {
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#email {
+	color: black;
+}
+
+a {
+	color: #FFFFFF;
+}
+
+
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+}
+h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(//demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}

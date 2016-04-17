@@ -1,0 +1,87 @@
+<head>
+  <title>World's Worst Bar Crawl</title>
+  <link href="vendor/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+     {{> loginButtons}}
+  <video autoplay  poster="media/beerposter.png" id="beer">
+    <source src='https://fat.gfycat.com/ThornyFlawlessAzurewingedmagpie.webm' type='video/webm' />
+  </video>
+
+  <div class='content'>
+    {{> main }}
+  </div>
+  <div class='footer'>
+    {{> footer }}
+  </div>
+
+</body>
+
+<template name = "main">
+ {{#if showAdmin}}
+    {{> admin}}
+ {{else}}
+    {{> signup}}
+ {{/if}}
+</template>
+
+<template name = "footer">
+  <div id='bottom' class='navbar navbar-fixed-bottom'>
+    <div class = 'row'>
+      <div class = 'col-md-4'></div>
+      <div class = 'col-md-4'>
+  <a href = "http://allanhernandez.com" class='textc'><h5>Created By Allan</h5></a>
+  {{#if isAdmin}}
+  | <a href = "#" class = "admin">admin</a>
+  {{/if}}
+ </div>
+ <div class ='col-md-4'></div>
+</div>
+</div>
+</template>
+
+<template name = "signup">
+  {{#if emailSubmitted }}
+  <img alt='#WWBC' src='https://i.sli.mg/d8ipu7.png'><br>
+    <h2>Thanks for signing up!</h2>
+  {{else}}
+  <div id ='logo'>
+    <img alt='#WWBC' src='https://i.sli.mg/d8ipu7.png'>
+  </div>
+  <div id ='initial'>
+    <h2>"This is about the <b>WORST</b> locations"</h2>
+  </div>
+  <div id = 'second'> 
+    <h2>"With the <b>BEST</b> people."</h2>
+  </div>
+  <div id='welcome'>
+    <h2>World's Worst Bar Crawl.</h2>
+    <p>The second annual World's Worst Bar Crawl is <b>April 1st 2017!</b><br>Leave us your email and we'll let you know when our app, local routes and merchandise are available...</p>
+    <form>
+      {{#if showBadEmail}}
+        {{> badEmail}}
+      {{/if}}
+      <input id="email" placeholder="Email...">
+    </form>
+    </div>
+  {{/if}}
+</template>
+
+
+<template name = "admin">
+  <h1>Signed up Customers</h1>
+  <table>
+    <tr><th>Customer Email</th><th>Referrer</th><th>Time</th></tr>
+    {{#each emails}}
+      <tr><td>{{ this.email }}</td><td>{{ this.referrer }}</td><td>{{ this.timestamp }}</td></tr>
+    {{/each }}
+  </table>
+</template>
+
+
+<template name="badEmail">
+  <div class="error">
+    <p>That's not a real email address...</p>
+  </div>
+</template>
